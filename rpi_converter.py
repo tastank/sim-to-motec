@@ -59,6 +59,8 @@ if __name__ == "__main__":
     parser.add_argument("--metric", action="store_true", help="use metric units (currently unsupported)")
     parser.add_argument("--freq", type=int, default=10, help="frequency to collect samples, currently ignored")
     args = parser.parse_args()
+    if args.input_filename == args.output_filename:
+        raise ValueError("Input filename is the same as output filename!")
 
     event = STMEvent(
         name="test",
