@@ -1,4 +1,74 @@
 CHANNELS = {
+    "system_time": {
+        "datatype":7,
+        "decplaces": 3,
+        "name": "System Time",
+        "shortname": "time",
+        "units": "s"
+    },
+    "oil_temp": {
+        "decplaces": 2,
+        "name": "Eng Oil Temp",
+        "shortname": "OilTemp",
+        "units": "F"
+    },
+    "oil_press": {
+        "decplaces": 2,
+        "name": "Eng Oil Pressure",
+        "shortname": "OilPress",
+        "units": "psi"
+    },
+    "water_temp": {
+        "decplaces": 2,
+        "name": "Eng Coolant Temp",
+        "shortname": "CoolTemp",
+        "units": "F"
+    },
+    "water_press": {
+        "decplaces": 2,
+        "name": "Eng Coolant Pressure",
+        "shortname": "CoolPress",
+        "units": "psi"
+    },
+    "volts": {
+        "decplaces": 2,
+        "name": "Voltage",
+        "shortname": "Volts",
+        "units": "V"
+    },
+    "fuel": {
+        "decplaces": 2,
+        "name": "Fuel Level",
+        "shortname": "Fuel",
+        "units": "USgal"
+    },
+    # lat is already defined as I want it
+    "lon": {
+        "decplaces": 7,
+        "name": "GPS Longitude",
+        "shortname": "GPSLong",
+        "units": "deg"
+    },
+    "alt": {
+        "decplaces": 3,
+        "name": "Altitude",
+        "shortname": "alt",
+        "units": "ft"
+    },
+    "mph": {
+        "datatype": 3,
+        "datasize": 2,
+        "decplaces":1,
+        "name": "Ground Speed",
+        "shortname": "Speed",
+        "units": "mph"
+    },
+    "track": {
+        "decplaces": 1,
+        "name": "GPS Track",
+        "shortname": "Track",
+        "units": "deg"
+    },
     "gear": {
         "datatype": 3,
         "datasize": 2,
