@@ -1,10 +1,30 @@
 CHANNELS = {
+    "loop_time": {
+        "datatype":7,
+        "decplaces": 3,
+        "name": "Loop Time",
+        "shortname": "ltime",
+        "units": "s"
+    },
+    "iteration_time": {
+        "datatype":7,
+        "decplaces": 3,
+        "name": "Iteration Time",
+        "shortname": "itime",
+        "units": "s"
+    },
     "system_time": {
         "datatype":7,
         "decplaces": 3,
         "name": "System Time",
         "shortname": "time",
         "units": "s"
+    },
+    "rpi_cpu_temp": {
+        "decplaces": 2,
+        "name": "RPi CPU Temp",
+        "shortname": "RPi Temp",
+        "units": "C"
     },
     "oil_temp": {
         "decplaces": 2,
@@ -68,6 +88,30 @@ CHANNELS = {
         "name": "GPS Track",
         "shortname": "Track",
         "units": "deg"
+    },
+    "gforce_x": {
+        "decplaces": 2,
+        "name": "G Force X",
+        "shortname": "Gs X",
+        "units": "g",
+    },
+    "gforce_y": {
+        "decplaces": 2,
+        "name": "G Force Y",
+        "shortname": "Gs Y",
+        "units": "g",
+    },
+    "gforce_z": {
+        "decplaces": 2,
+        "name": "G Force Z",
+        "shortname": "Gs Z",
+        "units": "g",
+    },
+    "lap_number": {
+        "datatype": 3,
+        "datasize": 2,
+        "name": "Lap Number",
+        "shortname": "Lap",
     },
     "gear": {
         "datatype": 3,

@@ -8,7 +8,8 @@ from datetime import datetime
 import re
 
 channels = [
-    "system_time","rpm","oil_press","oil_temp","water_press","water_temp","volts","fuel",
+    "system_time","loop_time","iteration_time","rpm","oil_press","oil_temp","water_press","water_temp","volts","fuel","rpi_cpu_temp",
+    "gforce_x", "gforce_y", "gforce_z",
     # I'm not sure these can be used since they're not numerical data
     #"gps_utc_date","gps_utc_time",
     "lat","lon","alt","mph"#,"track"
@@ -84,14 +85,25 @@ if __name__ == "__main__":
 
     with open(args.input_filename, newline="") as csvfile:
         csvreader = csv.DictReader(csvfile, delimiter=",", quotechar="\"")
+        laptime_start = None
         for row in csvreader:
+            if laptime_start is None:
+                laptime_start = float(row["system_time"])
             samples = [row[channel] for channel in channels]
             for i in range(len(samples)):
-                if samples[i] == "":
+                if samples[i] == "" or samples[i] is None:
                     samples[i] = 0
                 samples[i] = float(samples[i])
 
             log.add_samples(samples)
+            # TODO don't rely on the "beacon" parameter; I should probably remove that from the datalogger anyway and detect the start of a new lap here
+            if row["beacon"] == "1":
+                system_time = float(row["system_time"])
+                logx.add_lap(system_time - laptime_start)
+                laptime_start = system_time
 
     with open(args.output_filename, "wb") as fout:
         fout.write(log.to_string())
+
+    with open(args.output_filename + "x", "w") as fout:
+        fout.write(logx.to_string())
