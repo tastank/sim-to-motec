@@ -52,7 +52,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="Convert RPi data to MoTeC i2")
     parser.add_argument("input_filename", type=str, help="Name of CSV file to convert")
-    parser.add_argument("output_filename", type=str, help="Name of MoTeC ld file output")
+    parser.add_argument("--output-filename", "-o", type=str, help="Name of MoTeC ld file output")
     parser.add_argument("--driver", type=str, default="Tyler Stank", help="Driver name")
     parser.add_argument("--session", type=str, default="", help="Session e.g. Practice, Qualify, Race")
     parser.add_argument("--vehicle", type=str, default="MX-3", help="Override name of vehicle")
@@ -60,6 +60,8 @@ if __name__ == "__main__":
     parser.add_argument("--metric", action="store_true", help="use metric units (currently unsupported)")
     parser.add_argument("--freq", type=int, default=10, help="frequency to collect samples, currently ignored")
     args = parser.parse_args()
+    if args.output_filename is None:
+        args.output_filename = re.sub(r".csv$", ".ld", args.input_filename)
     if args.input_filename == args.output_filename:
         raise ValueError("Input filename is the same as output filename!")
 
