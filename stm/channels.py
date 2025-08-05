@@ -1,14 +1,14 @@
 CHANNELS = {
     "loop_time": {
         "datatype":7,
-        "decplaces": 3,
+        "decplaces": 4,
         "name": "Loop Time",
         "shortname": "ltime",
         "units": "s"
     },
     "iteration_time": {
         "datatype":7,
-        "decplaces": 3,
+        "decplaces": 4,
         "name": "Iteration Time",
         "shortname": "itime",
         "units": "s"
@@ -26,10 +26,22 @@ CHANNELS = {
         "shortname": "RPi Temp",
         "units": "C"
     },
+    "arduino_temp": {
+        "decplaces": 2,
+        "name": "Arduino CPU Temp",
+        "shortname": "ArduinoTemp",
+        "units": "C"
+    },
     "oil_temp": {
         "decplaces": 2,
         "name": "Eng Oil Temp",
         "shortname": "OilTemp",
+        "units": "F"
+    },
+    "oil_temp_filtered": {
+        "decplaces": 2,
+        "name": "Eng Oil Temp (filtered)",
+        "shortname": "OilTempFilt",
         "units": "F"
     },
     "oil_press": {
@@ -38,16 +50,34 @@ CHANNELS = {
         "shortname": "OilPress",
         "units": "psi"
     },
+    "oil_press_filtered": {
+        "decplaces": 2,
+        "name": "Eng Oil Pressure (filtered)",
+        "shortname": "OilPressFilt",
+        "units": "psi"
+    },
     "water_temp": {
         "decplaces": 2,
         "name": "Eng Coolant Temp",
         "shortname": "CoolTemp",
         "units": "F"
     },
+    "water_temp_filtered": {
+        "decplaces": 2,
+        "name": "Eng Coolant Temp (filtered)",
+        "shortname": "CoolTempFilt",
+        "units": "F"
+    },
     "water_press": {
         "decplaces": 2,
         "name": "Eng Coolant Pressure",
         "shortname": "CoolPress",
+        "units": "psi"
+    },
+    "water_press_filtered": {
+        "decplaces": 2,
+        "name": "Eng Coolant Pressure (filtered)",
+        "shortname": "CoolPressFilt",
         "units": "psi"
     },
     "volts": {
@@ -60,6 +90,12 @@ CHANNELS = {
         "decplaces": 2,
         "name": "Fuel Level",
         "shortname": "Fuel",
+        "units": "USgal"
+    },
+    "fuel_qty_filtered": {
+        "decplaces": 2,
+        "name": "Fuel Level (filtered)",
+        "shortname": "FuelQtyFilt",
         "units": "USgal"
     },
     # lat is already defined as I want it

@@ -151,7 +151,11 @@ class MotecSamples():
         for v in self.samples:
             v = ( (v / self.multiplier) - self.shift) * self.scale / pow(10.0, -self.decplaces)
             v = self.convert(v)
-            data += struct.pack(self.fmt, v)
+            try:
+                data += struct.pack(self.fmt, v)
+            except:
+                print(v)
+                exit()
 
         return data
 
